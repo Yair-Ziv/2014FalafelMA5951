@@ -1,0 +1,42 @@
+package org.usfirst.frc.team5951.subsystems;
+
+public class Thrower {
+
+	// Solenoids
+	private DoubleSolenoid thrower;
+
+	// Variables
+	public boolean isExtended;
+
+	/**
+	 * Initializes both of the solenoids and retracts both of them
+	 */
+	public Thrower() {
+		this.thrower = new DoubleSolenoid(Ports.PCM, Ports.throwerOpen, Ports.throwerClose);
+		this.thrower.set(Value.kReverse);
+	}
+
+	/**
+	 * Opens the thrower, waits 1 second then retracts the thrower's solenoid
+	 */
+	public void throwTubes() {
+		this.openThrower();
+		Timer.delay(1);
+		this.closeThrower();
+	}
+
+	/**
+	 * Opens the thrower
+	 */
+	public void openThrower() {
+		this.thrower.set(Value.kForward);
+	}
+
+	/**
+	 * Closes the thrower
+	 */
+	public void closeThrower() {
+		this.thrower.set(Value.kReverse);
+	}
+
+}
