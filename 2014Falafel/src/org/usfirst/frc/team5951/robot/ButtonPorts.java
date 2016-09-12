@@ -11,7 +11,7 @@ public class ButtonPorts {
 	public static final int forkUp = 10;
 	public static final int forkDown = 9;
 
-	//
+	//Lower joint buttons
 	public static final int lowerJointUp = 12;
 	public static final int lowerJointDown = 11;
 }
